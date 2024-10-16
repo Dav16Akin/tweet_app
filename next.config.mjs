@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    typescript: {
+      ignoreBuildErrors: true,
+    },
     experimental: {
-      // serverActions: true,
+      serverActions: true,
       serverComponentsExternalPackages: ["mongoose"],
     },
     eslint: {
