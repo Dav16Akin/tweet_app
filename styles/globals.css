@@ -76,8 +76,7 @@
   }
 
   body {
-    @apply bg-black text-white;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-dark-1 text-white;
   }
 
   h1 {
