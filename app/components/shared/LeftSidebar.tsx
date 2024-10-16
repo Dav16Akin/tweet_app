@@ -12,7 +12,7 @@ const LeftSidebar = () => {
   const { userId } = useAuth();
 
   return (
-    <section className="overflow-auto bg-black text-white pb-5 pt-28 max-md:hidden flex flex-col justify-between sticky left-0 top-0 z-20 h-screen w-fit">
+    <section className="overflow-auto pb-5 pt-28 max-md:hidden bg-zinc-950  flex flex-col justify-between sticky left-0 top-0 z-20 h-screen w-fit">
       <div className="flex flex-1 flex-col gap-1 px-6 w-full">
         {sidebarLinks.map((link) => {
           const isActive =

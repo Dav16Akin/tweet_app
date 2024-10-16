@@ -2,16 +2,16 @@
 import React, { ChangeEvent, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { UserValidation } from "../lib/validations/user";
+import { UserValidation } from "@/app/lib/validations/user";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { z } from "zod";
 import Image from "next/image";
 import { Textarea } from "../ui/textarea";
-import { isBase64Image } from "../lib/utils";
-import { useUploadThing } from "../lib/uploadthing";
-import { updateUser } from "../lib/actions/user.action";
+import { isBase64Image } from "@/app/lib/utils";
+import { useUploadThing } from "@/app/lib/uploadthing";
+import { updateUser } from "@/app/lib/actions/user.action";
 import { usePathname, useRouter } from "next/navigation";
 
 interface Props {

@@ -2,7 +2,7 @@ import UserCard from "@/app/components/cards/UserCard";
 import {
   fetchUser,
   fetchUsers,
-} from "@/app/components/lib/actions/user.action";
+} from "@/app/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";

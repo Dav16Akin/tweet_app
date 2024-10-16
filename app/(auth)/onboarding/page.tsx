@@ -3,7 +3,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import "../../../styles/globals.css";
 import React from "react";
 import { redirect } from "next/navigation";
-import { fetchUser } from "@/app/components/lib/actions/user.action";
+import { fetchUser } from "@/app/lib/actions/user.action";
 
 const Onboarding = async () => {
   const user = await currentUser();

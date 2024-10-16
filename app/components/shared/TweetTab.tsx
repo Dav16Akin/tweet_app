@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { fetchUserPosts } from "../lib/actions/user.action";
+import { fetchUserPosts } from "@/app/lib/actions/user.action";
 import TweetCard from "../cards/TweetCard";
 
 interface Props {

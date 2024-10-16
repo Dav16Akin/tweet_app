@@ -3,7 +3,7 @@
 import * as z from "zod";
 import { usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { CommentValidation } from "../lib/validations/tweet";
+import { CommentValidation } from "@/app/lib/validations/tweet";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -16,7 +16,7 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { addCommentToTweet } from "../lib/actions/tweet.actions";
+import { addCommentToTweet } from "@/app/lib/actions/tweet.actions";
 
 interface Props {
   tweetId: string;

@@ -15,8 +15,8 @@ import { Button } from "../ui/button";
 import { z } from "zod";
 import { Textarea } from "../ui/textarea";
 import { usePathname, useRouter } from "next/navigation";
-import { TweetValidation } from "../lib/validations/tweet";
-import { createTweet } from "../lib/actions/tweet.actions";
+import { TweetValidation } from "@/app/lib/validations/tweet";
+import { createTweet } from "@/app/lib/actions/tweet.actions";
 
 // import { updateUser } from "../lib/actions/user.action";
 

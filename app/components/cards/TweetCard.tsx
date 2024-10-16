@@ -46,7 +46,7 @@ const TweetCard = ({
   return (
     <article
       className={`flex flex-col rounded-sm w-full ${
-        isComment ? "px-0 sm:px-7 bg-black" : "bg-neutral-800 p-7"
+        isComment ? "px-0 sm:px-7 bg-black" : "bg-zinc-900 p-7"
       }`}
     >
       <div className="flex items-start justify-between">
@@ -60,7 +60,7 @@ const TweetCard = ({
                 className="cursor-pointer rounded-full"
               />
             </Link>
-            <div className="relative mt-2 w-0.5 grow rounded-full bg-neutral-900" />
+            <div className="relative mt-2 w-0.5 grow rounded-full bg-zinc-700" />
           </div>
 
           <div className="flex w-full flex-col">

@@ -1,5 +1,5 @@
 import { currentUser } from "@clerk/nextjs/server";
-import { fetchPosts } from "../components/lib/actions/tweet.actions";
+import { fetchPosts } from "@/app/lib/actions/tweet.actions";
 import TweetCard from "../components/cards/TweetCard";
 
 export default async function Home() {

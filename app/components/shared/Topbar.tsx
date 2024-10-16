@@ -7,7 +7,7 @@ import { dark } from "@clerk/themes";
 
 const Topbar = () => {
   return (
-    <nav className="h-12 fixed w-full text-white top-0 z-30 flex justify-between items-center px-4 bg-black">
+    <nav className="h-12 fixed w-full bg-zinc-950 top-0 z-50 flex justify-between items-center px-4">
       <div>
         <Link href="/" className="flex items-center gap-2">
           <Image src="/assets/logo.png" alt="Logo" width={36} height={36} />

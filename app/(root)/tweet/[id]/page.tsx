@@ -1,7 +1,7 @@
 import TweetCard from "@/app/components/cards/TweetCard";
 import Comment from "@/app/components/forms/Comment";
-import { fetchTweetById } from "@/app/components/lib/actions/tweet.actions";
-import { fetchUser } from "@/app/components/lib/actions/user.action";
+import { fetchTweetById } from "@/app/lib/actions/tweet.actions";
+import { fetchUser } from "@/app/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";
