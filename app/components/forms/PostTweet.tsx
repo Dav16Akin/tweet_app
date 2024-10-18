@@ -17,6 +17,7 @@ import { Textarea } from "../ui/textarea";
 import { usePathname, useRouter } from "next/navigation";
 import { TweetValidation } from "@/app/lib/validations/tweet";
 import { createTweet } from "@/app/lib/actions/tweet.actions";
+import { useOrganization } from "@clerk/nextjs";
 
 // import { updateUser } from "../lib/actions/user.action";
 
@@ -35,6 +36,7 @@ interface Props {
 const PostTweet = ({ userId }: { userId: string }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const { organization } = useOrganization();
 
   const form = useForm({
     resolver: zodResolver(TweetValidation),
@@ -45,14 +47,31 @@ const PostTweet = ({ userId }: { userId: string }) => {
   });
 
   const onSubmit = async (values: z.infer<typeof TweetValidation>) => {
+    
     await createTweet({
       text: values.tweet,
       author: userId,
-      communityId: null,
-      path: pathname
+      communityId: organization ? organization.id : null,
+      path: pathname,
     });
 
-    router.push("/")
+    // if(!organization) {
+    //   await createTweet({
+    //     text: values.tweet,
+    //     author: userId,
+    //     communityId: null,
+    //     path: pathname,
+    //   });
+    // }else {
+    //   await createTweet({
+    //     text: values.tweet,
+    //     author: userId,
+    //     communityId: organization.id,
+    //     path: pathname,
+    //   });
+    // }
+
+    router.push("/");
   };
 
   return (
@@ -68,7 +87,7 @@ const PostTweet = ({ userId }: { userId: string }) => {
             <FormItem className="flex flex-col gap-3">
               <FormLabel>Content</FormLabel>
               <FormControl className="no-focus">
-                <Textarea   
+                <Textarea
                   rows={15}
                   className="no-focus border border-gray-400 bg-neutral-800"
                   {...field}
@@ -79,7 +98,12 @@ const PostTweet = ({ userId }: { userId: string }) => {
           )}
         />
 
-        <Button type="submit" className="bg-indigo-500 mt-8 hover:bg-indigo-800">Post Tweet</Button>
+        <Button
+          type="submit"
+          className="bg-indigo-500 mt-8 hover:bg-indigo-800"
+        >
+          Post Tweet
+        </Button>
       </form>
     </Form>
   );

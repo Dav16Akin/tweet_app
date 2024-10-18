@@ -7,7 +7,7 @@ import PostTweet from '@/app/components/forms/PostTweet';
 const page = async () => {
     const user = await currentUser();
 
-    if(!user) return null
+    if(!user) return redirect("/sign-in")
 
     const userInfo = await fetchUser(user.id)
 

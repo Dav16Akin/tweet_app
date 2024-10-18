@@ -16,7 +16,7 @@ import TweetTab from "@/app/components/shared/TweetTab";
 const page = async ({ params }: { params: { id: string } }) => {
   const user = await currentUser();
 
-  if (!user) return null;
+  if (!user) return redirect("/sign-in");
 
   const userInfo = await fetchUser(params.id);
 
